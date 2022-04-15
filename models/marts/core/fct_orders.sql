@@ -22,7 +22,7 @@ final as(
         order_date,
         coalesce(order_payments.amount, 0) as amount
     from orders
-    left join payments using(order_id)
+    left join order_payments using(order_id)
 )
 
-select * from final
+select * from order_payments
